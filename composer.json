@@ -1,0 +1,45 @@
+{
+    "name": "tgw-sistemas/sped-common",
+    "type": "library",
+    "require": {
+        "php": ">= 7.4",
+        "ext-dom": "*",
+        "ext-curl": "*",
+        "ext-soap": "*",
+        "ext-openssl": "*",
+        "ext-mbstring": "*",
+        "psr/log": "^1.0||^2.0||^3.0",
+        "neitanod/forceutf8": "^2.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpunit/phpunit": "^9.3",
+        "scrutinizer/ocular": "^1.8",
+        "phpstan/phpstan": "^1.4",
+        "phpcompatibility/php-compatibility": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "NFePHP\\Common\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NFePHP\\Common\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-v5.0": "5.0-dev"
+        }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "test": "phpunit",
+        "phpcs": "./vendor/bin/phpcs src/",
+        "phpcbf": "./vendor/bin/phpcbf src/",
+        "stan": "phpstan analyse src/",
+        "stan80": "phpstan analyse src/ -c phpstan80.neon",
+        "stan81": "phpstan analyse src/ -c phpstan81.neon"
+    }
+}
